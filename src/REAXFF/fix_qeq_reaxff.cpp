@@ -404,6 +404,7 @@ void FixQEqReaxFF::init()
     efield->init();
     if (strcmp(update->unit_style,"real") != 0)
       error->all(FLERR,"Must use unit_style real with fix {} and external fields", style);
+    /*
     if (efield->varflag != FixEfield::CONSTANT)
       error->all(FLERR,"Cannot (yet) use fix {} with variable efield", style);
 
@@ -412,6 +413,7 @@ void FixQEqReaxFF::init()
          ((fabs(efield->ez) > SMALL) && domain->zperiodic))
       error->all(FLERR,"Must not have electric field component in direction of periodic "
                        "boundary when using charge equilibration with ReaxFF.");
+    */
   }
 
   // we need a half neighbor list w/ Newton off
